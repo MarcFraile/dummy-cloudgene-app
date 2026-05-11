@@ -7,9 +7,6 @@ submitButton: Run
 
 workflow:
    steps:
-     - name: Bashin it Up
-       type: command
-       exec: my-command.sh
      - name: Hello from the Nextflow
        type: nextflow
        script: main.nf
