@@ -7,12 +7,9 @@ submitButton: Run
 
 workflow:
    steps:
-     - name: Set Counter
+     - name: Bashin it Up
        type: command
-       exec: "echo ::set-counter name=dummy:: 3"
-     - name: Submit Counter
-       type: command
-       exec: "echo ::submit-counter name=dummy::"
+       exec: my-command.sh
      - name: Hello from the Nextflow
        type: nextflow
        script: main.nf
