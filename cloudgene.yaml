@@ -1,0 +1,18 @@
+id: dummy-cloudgene-app
+name: Dummy Cloudgene App
+description: Dummy app for testing purposes.
+version: 0.1.0
+category: Application
+submitButton: Run
+
+workflow:
+   steps:
+     - name: Set Counter
+       type: command
+       exec: "echo ::set-counter name=dummy:: 3"
+     - name: Submit Counter
+       type: command
+       exec: "echo ::submit-counter name=dummy::"
+     - name: Hello from the Nextflow
+       type: nextflow
+       script: main.nf
