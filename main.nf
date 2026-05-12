@@ -3,14 +3,19 @@
 process nextflowStep {
     script:
     """
-    echo "::set-counter name=nextflow:: 42"
-    echo "::set-counter name=this.has.dots:: 1337"
+    echo ::set-counter name=meaning:: 42
+    echo ::set-counter name=this.has.dots:: 1337
+    echo ::set-counter name=random:: $(python3 -c "import os, random; random.seed(os.urandom(128)); print(10 + 2 ** (4 * random.random()))")
 
-    echo "::submit-counter name=nextflow::"
-    echo "::submit-counter name=this.has.dots::"
+    echo ::submit-counter name=meaning::
+    echo ::submit-counter name=this.has.dots::
+    echo ::submit-counter name=random::
 
-    echo "::set-and-submit-value name=hey-hi:: hello there"
-    echo "::set-and-submit-value name=bye.bye:: Good night"
+    echo ::set-value name=nextflow:: $(nextflow -version)
+    echo ::submit-value name=nextflow::
+
+    echo ::set-value-and-submit name=hey-hi:: hello there
+    echo ::set-value-and-submit name=bye.bye:: Good night
     """
 }
 
