@@ -18,7 +18,7 @@ process nextflowStep {
     echo ::set-value-and-submit name=bye.bye:: \$(python3 -c "import os, random; random.seed(os.urandom(128)); print(random.choice(['goodbye', 'adieu']))")
 
     echo ::group::
-    echo "$(env)"
+    echo "\$(env)"
     echo ::endgroup::
     """
 }
