@@ -19,6 +19,6 @@ workflow:
           group: main
 
   inputs:
-    -id: dummy-label
-    type: label
-    description: This dummy takes no input from anybody.
+    - id: dummy-label
+      type: label
+      description: This dummy takes no input from anybody.
