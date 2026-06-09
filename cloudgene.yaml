@@ -6,7 +6,19 @@ category: Application
 submitButton: Run
 
 workflow:
-   steps:
-     - name: Hello from the Nextflow
-       type: nextflow
-       script: main.nf
+  steps:
+    - name: Hello from the Nextflow
+      type: nextflow
+      script: main.nf
+      groups:
+        - id: main
+          label: Main
+      processes:
+        - process: "nextflowStep"
+          view: label
+          group: main
+
+  inputs:
+    -id: dummy-label
+    type: label
+    description: This dummy takes no input from anybody.
