@@ -19,6 +19,46 @@ workflow:
           group: main
 
   inputs:
-    - id: dummy-label
+    - id: info-box
+      type: info
+      description: This is rendered HTML <a href="https://youtu.be/dQw4w9WgXcQ?si=DrgPl-zVe2byLMdv" target="_blank">click me!</a>
+    - id: text-input
+      type: string
+      description: Important text
+      help: https://youtu.be/dQw4w9WgXcQ?si=DrgPl-zVe2byLMdv
+      required: true
+      details: This is a longer explanation. Hello, world!
+    - id: hr
+      type: separator
+    - id: a-label
       type: label
-      description: This dummy takes no input from anybody.
+      description: I am a label! Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    - id: boss-list
+      type: list
+      description: Choose your team
+      values:
+        - key: team-a
+          value: Team A!
+        - key: team-b
+          value: Team... B?
+    - id: team-options
+      type: binded-list
+      description: Team options
+      emptySelection: get yer options
+      values:
+        - key: team-a-options
+          value: team-a
+          label: Team A Options
+          values:
+            - A shirt
+            - Advice
+            - An Aardvark
+        - key: team-b-options
+          value: team-b
+          label: Team B Options
+          values:
+            - Bees
+            - Bonnets
+            - Barracudas
+            - Balloons
+
