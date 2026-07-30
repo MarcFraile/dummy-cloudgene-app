@@ -2,6 +2,7 @@ id: dummy-cloudgene-app
 name: Dummy Cloudgene App
 description: Dummy app for testing purposes.
 version: 0.1.0
+website: https://github.com/MarcFraile/dummy-cloudgene-app
 category: Application
 submitButton: Run
 
@@ -37,28 +38,25 @@ workflow:
       type: list
       description: Choose your team
       values:
-        - key: team-a
-          value: Team A!
-        - key: team-b
-          value: Team... B?
+        team-a: Team A!
+        team-b: Team... B?
     - id: team-options
       type: binded-list
       description: Team options
       emptySelection: get yer options
-      values:
-        - key: team-a-options
-          value: team-a
+      value: boss-list
+      groups:
+        team-a:
           label: Team A Options
           values:
-            - A shirt
-            - Advice
-            - An Aardvark
-        - key: team-b-options
-          value: team-b
+            apple: Apple
+            advice: Advice
+            aardvark: Aardvark
+        team-b:
           label: Team B Options
           values:
-            - Bees
-            - Bonnets
-            - Barracudas
-            - Balloons
+            bees: Bees
+            bonnets: Bonnets
+            barracudas: Barracudas
+            balloons: Balloons
 
