@@ -29,6 +29,14 @@ workflow:
       help: https://youtu.be/dQw4w9WgXcQ?si=DrgPl-zVe2byLMdv
       required: true
       details: This is a longer explanation. Hello, world!
+    - id: crash
+      type: checkbox
+      description: Crash and Burn
+      details: Force this job to fail.
+      value: 'dont-crash'
+      values:
+        true: 'crash-job'
+        false: 'dont-crash'
     - id: hr
       type: separator
     - id: a-label
