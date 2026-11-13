@@ -26,7 +26,7 @@ process nextflowStep {
 workflow {
     println('::message:: Hello from Dummy App!')
 
-    if (params.crash) {
+    if (params.crash == 'crash-job') {
         println('::error:: crash selected')
         error('crash selected')
     }
